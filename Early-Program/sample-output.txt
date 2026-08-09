@@ -1,0 +1,10 @@
+======================================
+ENGINEER TRADING CARD
+=====================
+
+| NAME: Abubakar Imran |
+| DATE: July 6th 2026 |
+| MAJOR: Computer Engineering |
+| FACT: I like swimming. |
+| SUPERPOWER: "Superspeed" |
+============================
