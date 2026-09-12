@@ -6,17 +6,19 @@ I am a sophomore Computer Engineering student at Stony Brook University with int
 
 This repository is where I store and showcase code from my academic and personal projects. It includes projects completed throughout my coursework, along with independent projects that help me continue developing my programming and engineering skills.
 
-## Projects
+## Featured Projects
+
+### Smart Environmental Monitoring and Alert System
+An ESP32-based system that monitors CO₂, temperature, humidity, and ambient light levels in real time.
 
 ### BroBank
-A programming project developed during the semester that applies C programming concepts, problem-solving, and program design.
+A programming project developed during the semester.
 
 ### Maze Project
-A project developed during the semester involving programming, algorithms, and problem-solving concepts.
+A programming project developed during the semester.
 
 ### Personal Projects
-This repository also includes personal projects that I build outside of coursework to explore new technologies and strengthen my skills in computer engineering and programming.
-
+Additional independent projects developed outside of coursework.
 ## Skills
 
 - C
