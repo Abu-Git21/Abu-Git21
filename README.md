@@ -2,38 +2,32 @@
 
 ## About Me
 
-I am a sophomore Computer Engineering student at Stony Brook University with interests in embedded systems, software development, digital hardware, and computer engineering design.
+I am a sophomore Computer Engineering student at Stony Brook University with interests in embedded systems, programming, hardware, and software development.
 
-This repository documents my programming coursework and projects from ESE 124 during Summer 2026. The work included here reflects my development in C programming, problem-solving, data structures, and fundamental software engineering concepts.
+This repository is where I store and showcase code from my academic and personal projects. It includes projects completed throughout my coursework, along with independent projects that help me continue developing my programming and engineering skills.
 
-## Technical Skills
-
-- C Programming
-- Functions and Modular Programming
-- Arrays and Strings
-- Pointers and Memory Management
-- Dynamic Memory Allocation
-- File Input and Output
-- Abstract Data Types (ADTs)
-- Stacks and Queues
-- Breadth-First Search (BFS)
-- Depth-First Search (DFS)
-- Debugging and Testing
-
-## Featured Projects
-
-### Engineer Trading Card
-A C programming project focused on applying fundamental programming concepts, program structure, and data manipulation.
-
-### String Inspector
-A project focused on string manipulation, memory handling, and implementing program logic in C.
+## Projects
 
 ### BroBank
-A larger C programming project involving problem-solving, program design, and the application of multiple programming concepts.
+A programming project developed during the semester that applies C programming concepts, problem-solving, and program design.
 
-## What I Learned
+### Maze Project
+A project developed during the semester involving programming, algorithms, and problem-solving concepts.
 
-Through ESE 124, I strengthened my understanding of programming fundamentals and developed experience with memory management, data structures, algorithms, debugging, and software development in C.
+### Personal Projects
+This repository also includes personal projects that I build outside of coursework to explore new technologies and strengthen my skills in computer engineering and programming.
+
+## Skills
+
+- C
+- C++
+- Data Structures and Algorithms
+- Pointers and Dynamic Memory
+- File Handling
+- Debugging and Testing
+- Embedded Systems
+- Arduino
+- ESP32
 
 ## Education
 
@@ -41,6 +35,6 @@ Through ESE 124, I strengthened my understanding of programming fundamentals and
 Bachelor of Engineering in Computer Engineering  
 Expected Graduation: 2029
 
-## Professional Development
+## Goals
 
-I am continuing to develop my technical skills through coursework and hands-on engineering projects, with a growing interest in embedded systems, hardware-software integration, and computer engineering design.
+I am continuing to build my technical skills through coursework, programming projects, and hands-on engineering experience. My goal is to create projects that combine software, hardware, and embedded systems.
