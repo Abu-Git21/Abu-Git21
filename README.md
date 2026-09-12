@@ -1,27 +1,42 @@
-# ESE 124 Summer 2026 Portfolio
+# Abubakar Imran | Computer Engineering Portfolio
 
 ## About Me
 
-My name is Abubakar Imran. This portfolio shows my progress and work from ESE 124 during Summer 2026.
+I am a sophomore Computer Engineering student at Stony Brook University with interests in embedded systems, programming, hardware, and software development.
 
-## Skills Learned
+This repository is where I store and showcase code from my academic and personal projects. It includes projects completed throughout my coursework, along with independent projects that help me continue developing my programming and engineering skills.
 
-* C programming
-* Functions
-* Arrays and strings
-* Pointers
-* File handling
-* Stacks and queues
-* ADTs
-* BFS and DFS
-* Debugging and testing
+## Featured Projects
 
-## Projects
+### Smart Environmental Monitoring and Alert System
+An ESP32-based system that monitors CO₂, temperature, humidity, and ambient light levels in real time.
 
-1. Engineer Trading Card
-2. String Inspector
-3. Exercise 10 - BroBank
+### BroBank
+A programming project developed during the semester.
 
-## Professional Goal
+### Maze Project
+A programming project developed during the semester.
 
-My goal is to continue improving my programming and problem-solving skills as I study computer engineering.
+### Personal Projects
+Additional independent projects developed outside of coursework.
+## Skills
+
+- C
+- C++
+- Data Structures and Algorithms
+- Pointers and Dynamic Memory
+- File Handling
+- Debugging and Testing
+- Embedded Systems
+- Arduino
+- ESP32
+
+## Education
+
+**Stony Brook University**  
+Bachelor of Engineering in Computer Engineering  
+Expected Graduation: 2029
+
+## Goals
+
+I am continuing to build my technical skills through coursework, programming projects, and hands-on engineering experience. My goal is to create projects that combine software, hardware, and embedded systems.
