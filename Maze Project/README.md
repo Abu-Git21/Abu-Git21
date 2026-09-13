@@ -2,19 +2,29 @@
 
 ## Overview
 
-This project is a maze navigation and pathfinding program developed in C. The program uses custom data structures and modular programming to represent, process, and navigate maze environments.
+Maze Project is a C programming project that demonstrates maze navigation and pathfinding using custom data structures and modular program design.
 
-The project demonstrates the use of fundamental data structures, including queues and stacks, along with file handling and algorithmic problem solving.
+The program reads maze configurations from text files and uses queues and stacks to support maze traversal and path tracking.
 
 ## Features
 
-- Reads maze data from text files
-- Processes and represents maze environments
-- Uses queues for maze traversal operations
-- Uses stacks for path tracking and navigation
-- Handles different maze configurations
-- Includes blocked maze test cases
-- Demonstrates modular C programming
+- Reads maze configurations from text files
+- Represents and processes maze environments
+- Uses a queue for maze traversal operations
+- Uses a stack for path tracking
+- Handles multiple maze configurations
+- Tests blocked and unsolvable maze scenarios
+- Uses modular C programming with separate source and header files
+
+## Data Structures
+
+### Queue
+
+A queue is used to manage maze traversal operations using a First-In, First-Out approach.
+
+### Stack
+
+A stack is used to track paths and navigation using a Last-In, First-Out approach.
 
 ## Project Structure
 
