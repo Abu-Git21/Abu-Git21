@@ -1,4 +1,4 @@
-# A1bubakar Imran | Computer Engineering Portfolio
+# Abubakar Imran | Computer Engineering Portfolio
 
 ## About Me
 

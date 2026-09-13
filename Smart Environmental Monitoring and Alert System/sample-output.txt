@@ -1,0 +1,18 @@
+Startup
+
+SMART ENVIRONMENTAL MONITOR
+SYSTEM STARTING
+
+Checking SCD30...
+SCD30 READY
+
+Normal sensor readings
+================================
+ENVIRONMENTAL DATA
+================================
+CO2: 850 ppm
+Temperature: 24.6 C
+Humidity: 52.8 %
+Light Level: 2150
+System Status: NORMAL
+================================

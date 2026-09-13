@@ -1,0 +1,242 @@
+name: Autograding Tests
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  checks: write
+  actions: read
+
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout student code
+        uses: actions/checkout@v4
+
+      - name: Check required files
+        shell: bash
+        run: |
+          required_files=(
+            "main.c"
+            "maze.c"
+            "maze.h"
+            "stack.c"
+            "stack.h"
+            "queue.c"
+            "queue.h"
+            "maze.txt"
+            "README.md"
+            "tests.md"
+          )
+
+          for file in "${required_files[@]}"; do
+            if [[ ! -f "$file" ]]; then
+              echo "Missing required file: $file"
+              exit 1
+            fi
+          done
+
+          echo "All required files are present."
+
+      - name: Compile with warnings enabled
+        shell: bash
+        run: |
+          gcc -std=c11 -Wall -Wextra -pedantic \
+            main.c maze.c stack.c queue.c \
+            -o lily_maze
+
+      - name: Test Stack ADT
+        shell: bash
+        run: |
+          cat > /tmp/test_stack.c <<'EOF'
+          #include <stdio.h>
+          #include "stack.h"
+
+          int main(void)
+          {
+              Stack stack;
+              Position input = {2, 3};
+              Position output = {-1, -1};
+
+              stack_init(&stack);
+
+              if (!stack_is_empty(&stack))
+              {
+                  return 1;
+              }
+
+              if (!stack_push(&stack, input))
+              {
+                  return 2;
+              }
+
+              if (stack_is_empty(&stack))
+              {
+                  return 3;
+              }
+
+              if (!stack_pop(&stack, &output))
+              {
+                  return 4;
+              }
+
+              if (output.row != 2 || output.col != 3)
+              {
+                  return 5;
+              }
+
+              if (!stack_is_empty(&stack))
+              {
+                  return 6;
+              }
+
+              puts("Stack test passed.");
+              return 0;
+          }
+          EOF
+
+          gcc -std=c11 -Wall -Wextra -pedantic \
+            -I. /tmp/test_stack.c stack.c -o /tmp/test_stack
+
+          /tmp/test_stack
+
+      - name: Test Queue ADT
+        shell: bash
+        run: |
+          cat > /tmp/test_queue.c <<'EOF'
+          #include <stdio.h>
+          #include "queue.h"
+
+          int main(void)
+          {
+              Queue queue;
+              Position first = {1, 2};
+              Position second = {3, 4};
+              Position output = {-1, -1};
+
+              queue_init(&queue);
+
+              if (!queue_is_empty(&queue))
+              {
+                  return 1;
+              }
+
+              if (!queue_enqueue(&queue, first) ||
+                  !queue_enqueue(&queue, second))
+              {
+                  return 2;
+              }
+
+              if (!queue_dequeue(&queue, &output))
+              {
+                  return 3;
+              }
+
+              if (output.row != 1 || output.col != 2)
+              {
+                  return 4;
+              }
+
+              if (!queue_dequeue(&queue, &output))
+              {
+                  return 5;
+              }
+
+              if (output.row != 3 || output.col != 4)
+              {
+                  return 6;
+              }
+
+              if (!queue_is_empty(&queue))
+              {
+                  return 7;
+              }
+
+              puts("Queue test passed.");
+              return 0;
+          }
+          EOF
+
+          gcc -std=c11 -Wall -Wextra -pedantic \
+            -I. /tmp/test_queue.c queue.c -o /tmp/test_queue
+
+          /tmp/test_queue
+
+      - name: Test Maze File Loading
+        shell: bash
+        run: |
+          cat > /tmp/test_maze.c <<'EOF'
+          #include <stdio.h>
+          #include "maze.h"
+
+          int main(void)
+          {
+              Maze maze;
+
+              if (!maze_load(&maze, "maze.txt"))
+              {
+                  return 1;
+              }
+
+              if (maze.rows <= 0 || maze.cols <= 0)
+              {
+                  return 2;
+              }
+
+              if (maze.cells[maze.lily.row][maze.lily.col] != 'L')
+              {
+                  return 3;
+              }
+
+              if (maze.cells[maze.exit_position.row][maze.exit_position.col] != 'E')
+              {
+                  return 4;
+              }
+
+              puts("Maze loading test passed.");
+              return 0;
+          }
+          EOF
+
+          gcc -std=c11 -Wall -Wextra -pedantic \
+            -I. /tmp/test_maze.c maze.c queue.c -o /tmp/test_maze
+
+          /tmp/test_maze
+
+      - name: Test Missing Maze File Handling
+        shell: bash
+        run: |
+          cat > /tmp/test_missing.c <<'EOF'
+          #include "maze.h"
+
+          int main(void)
+          {
+              Maze maze;
+
+              if (maze_load(&maze, "file_that_does_not_exist.txt"))
+              {
+                  return 1;
+              }
+
+              return 0;
+          }
+          EOF
+
+          gcc -std=c11 -Wall -Wextra -pedantic \
+            -I. /tmp/test_missing.c maze.c queue.c -o /tmp/test_missing
+
+          /tmp/test_missing
+
+      - name: Check README instructions
+        shell: bash
+        run: |
+          grep -qi "gcc" README.md
+          grep -qi "W.*A.*S.*D" README.md
+          grep -qi "undo" README.md
+          grep -qi "BFS" README.md
+
+          echo "README check passed."

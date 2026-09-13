@@ -1,5 +1,0 @@
-Enter text: Hello 123 World
-Vowels: 3
-Digits: 3
-Spaces: 2
-Reverse: dlroW 321 olleH
